@@ -1,1 +1,9 @@
+torch
+torchvision
+medmnist
+numpy
+scikit-learn
+matplotlib
+pyyaml
+flwr
 
