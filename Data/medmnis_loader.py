@@ -1,9 +1,9 @@
-from medmnist import PathMNIST, INFO
+from medmnist import PathMNIST, ChestMNIST, DermaMNIST , INFO
 from torchvision import transforms
 
 def load_medmnist(dataset_name):
     info = INFO[dataset_name]
-    DataClass = info["python_class"]
+    DataClass = eval(info["python_class"])
 
     transform = transforms.Compose([
         transforms.ToTensor(),
