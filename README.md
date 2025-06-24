@@ -1,1 +1,1 @@
-# Medical-Image-Analysis-Using-Federated-Learning
+# Medical-Image-Analysis-Using-Federated-Learning (DEMO)
