@@ -7,6 +7,8 @@ def load_medmnist(dataset_name):
 
     transform = transforms.Compose([
         transforms.ToTensor(),
+        transforms.RandomHorizontalFlip(),
+        transforms.RandomRotation(10),
         transforms.Normalize(mean=[.5], std=[.5])
     ])
 
