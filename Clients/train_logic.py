@@ -11,6 +11,9 @@ def local_train(model, x, y, config):
     dataset = TensorDataset(x, y)  # 🧪 Bundle data into PyTorch dataset
     loader = DataLoader(dataset, batch_size=config["batch_size"], shuffle=True)
 
+    total_loss = 0
+    num_batches = 0
+
     for _ in range(config["epochs"]):  # 🔁 Local training loop
         for xb, yb in loader:
             optimizer.zero_grad()
@@ -18,5 +21,8 @@ def local_train(model, x, y, config):
             loss = criterion(preds, yb)
             loss.backward()
             optimizer.step()
+            total_loss += loss.item()
+            num_batches += 1
 
-    return model.state_dict()   # 🔁 Return updated weights only
+    avg_loss = total_loss / num_batches if num_batches > 0 else 0
+    return model.state_dict(), avg_loss   # 🔁 Return updated weights only

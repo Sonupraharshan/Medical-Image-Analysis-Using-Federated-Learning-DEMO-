@@ -1,8 +1,8 @@
 num_clients: 2
-num_rounds: 10
-epochs: 5
+num_rounds: 5
+epochs: 10
 batch_size: 32
-learning_rate: 0.0005
+learning_rate: 0.0001
 dataset: pathmnist
 aggregation: fedavg
 model: cnn
